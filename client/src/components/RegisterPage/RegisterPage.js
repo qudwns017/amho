@@ -51,7 +51,7 @@ function RegisterPage() {
       if (response.payload.success) {
         navigate("/login");
       } else {
-        alert("Failed to sign up");
+        alert("회원가입에 실패하였습니다!");
       }
     });
   };
@@ -62,7 +62,7 @@ function RegisterPage() {
         <div className={styles.title}>회원가입</div>
         <div className={styles.Box}>
           <div className={styles.SignUpForm}>
-            <div className={styles.info} >
+            <div className={styles.info}>
               이메일
               <input
                 type="email"
