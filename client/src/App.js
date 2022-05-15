@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import Navbar from './components/Navbar/Navbar';
 import {
   BrowserRouter as Router,
   Routes,
@@ -7,20 +8,21 @@ import {
   // Link
 } from "react-router-dom";
 
-import LandingPage from "./components/views/LandingPage/LandingPage";
-import LoginPage from "./components/views/LoginPage/LoginPage";
-import RegisterPage from "./components/views/RegisterPage/RegisterPage";
+import LandingPage from "./components/LandingPage/LandingPage";
+
+import RegisterPage from "./components/RegisterPage/RegisterPage";
 
 function App() {
   return (
     <Router>
-      <div>
-        <Routes>
-          <Route path="/" element={<LandingPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
-        </Routes>
-      </div>
+      <Navbar/>
+    
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+      </Routes> 
+
+      
     </Router>
   );
 }

@@ -5,28 +5,32 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.34);
+  background-color:rgb(223, 223, 223);
+  /* background-image: url(../../image/park.jpg); */
+  background-size: cover;
 }
 
 .SignUpForm {
   width: 40%;
   height: 60%;
-  border: solid 3px purple;
-  border-radius: 15px;
+
+  
   z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-around;
-  padding: 30px;
+
   background-color: white;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.3);
 }
 
 .title {
+
   position: absolute;
   width: 200px;
   height: 50px;
-  border: 3px solid purple;
+  border: 3px solid #6c6dfb;
   border-radius: 15px;
   top: 17.5%;
   z-index: 2;
@@ -39,14 +43,22 @@
 
 .info {
   background-color: rgb(251, 251, 251);
-  border-bottom: 3px solid purple;
+  height: 100%;
   padding: 5px;
   width: 100%;
   display: flex;
-  border-radius: 10px;
   justify-content: space-between;
   align-items: center;
   text-align: center;
+}
+
+
+
+.info input:focus + label,
+.info input:valid + label{
+  background-color: #2b42c7;
+  color: white;
+  transition: .5s;
 }
 
 .info2 {

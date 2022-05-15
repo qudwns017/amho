@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { registerUser } from "../../../_actions/user_action";
+import { registerUser } from "../../_actions/user_action";
 import { useNavigate, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./RegisterPage.module.css";
@@ -62,7 +62,7 @@ function RegisterPage() {
         <div className={styles.title}>회원가입</div>
         <div className={styles.Box}>
           <div className={styles.SignUpForm}>
-            <div className={styles.info}>
+            <div className={styles.info} >
               이메일
               <input
                 type="email"
