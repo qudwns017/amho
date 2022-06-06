@@ -6,34 +6,36 @@ const jwt = require('jsonwebtoken');
 
 const userSchema = mongoose.Schema({
     name: {
-        type: String,
-        maxlength: 50
+      type: String,
+      maxlength: 50,
+      required: true,
     },
     email: {
-        type: String,
-        trim: true,
-        unique: 1
+      type: String,
+      trim: true,
+      unique: 1,
+      required: true,
     },
     password: {
-        type: String,
-        minlength: 5
+      type: String,
+      minlength: 5,
+      required: true,
     },
-    lastname: {
-        type: String,
-        maxlength: 50
+    tel: {
+      type: String,
+      required: true,
     },
-    role: {
-        type: Number,
-        default: 0
+    carnum: {
+      type: String,
+      required: false,
     },
-    image: String,
     token: {
-        type: String
+      type: String,
     },
     tokenExp: {
-        type: Number
-    }
-})
+      type: Number,
+    },
+  });
 
 
 userSchema.pre('save', function (next) {

@@ -11,33 +11,27 @@ export const SidebarData = [
         cName: 'nav-text'
     },
     {
-        title: '내 정보',
-        path: '/',
+        title: '주차권',
+        path: '/ticket',
         icon: <AiIcons.AiFillFile />,
         cName: 'nav-text'
     },
     {
-        title: '결제정보',
-        path: '/reports',
+        title: '주차장등록(다른곳으로 옮길거)',
+        path: '/add',
         icon: <IoIcons.IoIosPaper />,
         cName: 'nav-text'
     },
     {
-        title: '즐겨찾기',
-        path: '/products',
+        title: '결제내역',
+        path: '/money',
         icon: <FaIcons.FaCartPlus />,
         cName: 'nav-text'
     },
     {
-        title: '공지사항',
-        path: '/messages',
+        title: '예약페이지(나중에 없앰)',
+        path: '/reservation',
         icon: <FaIcons.FaEnvelopeOpenText />,
         cName: 'nav-text'
     },
-    {
-        title: '도움',
-        path: '/support',
-        icon: <IoIcons.IoMdHelpCircle />,
-        cName: 'nav-text'
-    }
 ];

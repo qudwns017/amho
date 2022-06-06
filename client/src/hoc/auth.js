@@ -28,6 +28,8 @@ export default function (SpecificComponent, option, adminRoute = null) {
       });
     }, []);
 
+      
+
     return <SpecificComponent />;
   }
   return AuthenticationCheck;

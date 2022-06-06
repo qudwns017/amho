@@ -1,0 +1,86 @@
+.box {
+    position: fixed;
+    top: 100px;
+    right: 100px;
+    padding: 15px 25px;
+    width: 400px;
+    height: 450px;
+    z-index: 3;
+    background-color: rgb(253, 254, 255);
+    box-shadow: 0 5px 5px rgba(0,0,0,0.3);
+    border-radius: 2px;
+    border: 2px solid rgba(167, 167, 167, 0.456);
+    display: flex;
+    animation: anime_down 1s;
+}
+
+@keyframes anime_down {
+    0% {
+      top: -300px;
+      opacity: 0;
+    }
+    100% {
+      top: 100px;
+      opacity: 1;
+    }
+  } 
+
+.box form {
+    width: 100%;
+}
+
+.title {
+    text-align: center;
+    border-bottom: 1px solid;
+    font-size:30px;
+    padding-top:15px;
+    padding-bottom:5px;
+    margin-bottom:20px;
+}
+
+
+.list {
+    padding: 0;
+}
+
+
+
+.list li {
+    list-style-type: none;
+    margin: 8px 0;
+}
+
+.list li label {
+    width: 30%;
+}
+
+.list li input {
+    width: 70%;
+}
+
+
+.image {
+    width: 242px;
+    height: 100px;
+    border: rgb(100, 100, 100) 1px solid;
+    float:right;
+}
+
+.fin {
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius:2px;
+    background-color:#001b95;
+    color: #fff;
+    font-size:16px;
+    font-weight: bold;
+    transition: .5s;
+}
+
+.fin:hover {
+    background-color:#2b42c7;
+    color: #ffff;
+    transition: .5s;
+}
