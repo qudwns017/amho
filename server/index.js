@@ -6,7 +6,6 @@ const config = require("./config/key");
 const { auth } = require("./middleware/auth");
 const { User } = require("./models/User");
 const { Company } = require("./models/Company");
-const { Spot } = require("./models/Spot");
 
 //application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -71,7 +70,7 @@ app.post("/api/users/login", (req, res) => {
       user.generateToken((err, user) => {
         if (err) return res.status(400).send(err);
 
-        // 토큰을 저장한다.  어디에 ?  쿠키 , 로컬 스토리지
+        // 토큰을 저장한다.  어디에 ?  쿠키 , 로컳스토리지
         res
           .cookie("x_auth", user.token)
           .cookie("id", user.name)
@@ -120,37 +119,6 @@ app.post("/api/companies/addcompany", (req, res) => {
       success: true,
     });
   });
-});
-
-app.post("/api/spots", (req, res) => {
-  // 내용을 등록 할떄 필요한 정보들을  client에서 가져오면
-  //그것들을  데이터 베이스에 넣어준다.
-  const spot = new Spot(req.body);
-
-  spot.save((err, spotInfo) => {
-    if (err) return res.json({ success: false, err });
-    return res.status(200).json({
-      success: true,
-    });
-  });
-});
-
-// GET ALL SPOTS
-app.get("/api/spots", function (req, res) {
-  Spot.find(function (err, spots) {
-    if (err) return res.status(500).send({ error: "database failure" });
-    res.json(spots);
-  });
-});
-
-// GET SINGLE SPOT
-app.get("/api/books/:book_id", function (req, res) {
-  res.end();
-});
-
-// CREATE BOOK
-app.post("/api/books", function (req, res) {
-  res.end();
 });
 
 const port = 5000;

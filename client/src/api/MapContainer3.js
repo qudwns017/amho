@@ -1,3 +1,5 @@
+import "./Map.css" ;
+
 const { kakao } = window;
 
 export default function MapContainer() {
@@ -27,7 +29,7 @@ export default function MapContainer() {
             "</div>"
           : "";
         detailAddr +=
-          "<div>지번 주소 : " + result[0].address.address_name + "</div>";
+          "<div >지번 주소 : " + result[0].address.address_name + "</div>";
 
         var content =
           '<div class="bAddr">' +

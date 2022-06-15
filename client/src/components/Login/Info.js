@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import styles from "./Login.module.css";
 import * as AiIcons from "react-icons/ai";
+import * as ImIcons from "react-icons/im";
 
 var deleteCookie = function (name) {
   document.cookie = name + "=; expires=Thu, 01 Jan 1999 00:00:10 GMT;";
@@ -15,7 +16,6 @@ function Info() {
         deleteCookie("x_auth");
         deleteCookie("id");
         deleteCookie("tel");
-        deleteCookie("carnum");
         deleteCookie("email");
 
         window.location.reload();
@@ -27,36 +27,40 @@ function Info() {
   };
 
   // 사용자 이름 불러오기
-  var match = document.cookie.match(new RegExp("(^| )" + "id" + "=([^;]+)"));
+  var match = document.cookie.match(new RegExp("(^| )id=([^;]+)"));
   const username = decodeURIComponent(match[2]);
 
-  var match = document.cookie.match(new RegExp("(^| )" + "email" + "=([^;]+)"));
+  var match = document.cookie.match(new RegExp("(^| )email=([^;]+)"));
   const email = decodeURIComponent(match[2]);
 
-  var match = document.cookie.match(
-    new RegExp("(^| )" + "carnum" + "=([^;]+)")
-  );
+  var match = document.cookie.match(new RegExp("(^| )carnum=([^;]+)"));
   const carnum = decodeURIComponent(match[2]);
 
-  var match = document.cookie.match(new RegExp("(^| )" + "tel" + "=([^;]+)"));
+  var match = document.cookie.match(new RegExp("(^| )tel=([^;]+)"));
   const tel = decodeURIComponent(match[2]);
 
   return (
     <>
       <form>
         <div className={styles.loginBox2}>
-          <div className={styles.design2}></div>
+          <div className={styles.design2}>
+            <div className={styles.hidden}></div>
+          </div>
           <div className={styles.loginForm2}>
             <div className={styles.loginTitle2}>
-              <div>{username}</div>
+              <h1>{username}</h1>
               <h2>
-                <AiIcons.AiFillCar />
+                <AiIcons.AiFillPushpin />
               </h2>
             </div>
-            <div>
-              <li>{email}</li>
-              <li>{carnum}</li>
-              <li>{tel}</li>
+            <div className={styles.user}></div>
+            <div className={styles.userD}>
+              <li>
+                <h5>이메일</h5> <h4>{email}</h4>
+              </li>
+              <li>
+                <h5>전화번호</h5> <h4>{tel}</h4>
+              </li>
             </div>
             <div className={styles.buttonS}>
               <a className={styles.button1}>정보수정</a>

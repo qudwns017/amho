@@ -6,8 +6,6 @@ import { useDispatch } from "react-redux";
 import { loginUser } from "../../_actions/user_action";
 import * as AiIcons from "react-icons/ai";
 
-
-
 function Login() {
   const navigate = useNavigate();
   const [openModal, setOpenModal] = useState(false);
@@ -61,10 +59,10 @@ function Login() {
           <div className={styles.design}></div>
           <div className={styles.loginForm}>
             <div className={styles.loginTitle}>
-              <h1>팍플</h1>
+              <h1>핫플</h1>
               <h5>+</h5>
               <h2>
-                <AiIcons.AiFillCar />
+                <AiIcons.AiFillPushpin />
               </h2>
             </div>
             <div className={styles.txt_field}>
@@ -108,7 +106,6 @@ function Login() {
           </div>
         </div>
       </form>
-
     </div>
   );
 }

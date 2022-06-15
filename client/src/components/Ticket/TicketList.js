@@ -1,19 +1,15 @@
 import React from "react";
-import { addspot } from "../../_actions/user_action";
-import axios from "axios";
+// import axios from "axios";
+// import { useNavigate, Link } from "react-router-dom";
+import styles from './Ticket.module.css';
 
 function TicketList() {
-  axios
-    .get("http://localhost:3000/api/spots/spot")
-    .then((Response) => {
-      console.log(Response.data);
-    })
-    .catch((Error) => {
-      console.log(Error);
-    });
+
   return (
     <>
-      <div>안녕하세요</div>
+      <div className={styles.background1}>
+        <div className={styles.card}></div>
+      </div>
     </>
   );
 }

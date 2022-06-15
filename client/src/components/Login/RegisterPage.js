@@ -14,7 +14,6 @@ function RegisterPage({ closeModal }) {
   const [HandPhone, setHandPhone] = useState("");
   const [Password, setPassword] = useState("");
   const [ConfirmPassword, setConfirmPassword] = useState("");
-  const [CarNumber, setCarNumber] = useState("");
 
   const onEmailHandler = (event) => {
     setEmail(event.currentTarget.value);
@@ -35,10 +34,6 @@ function RegisterPage({ closeModal }) {
     setConfirmPassword(event.currentTarget.value);
   };
 
-  const onCarNumberHandler = (event) => {
-    setCarNumber(event.currentTarget.value);
-  };
-
   const onSubmitHandler = (event) => {
     event.preventDefault();
 
@@ -51,7 +46,6 @@ function RegisterPage({ closeModal }) {
       password: Password,
       name: Name,
       tel: HandPhone,
-      carnum: CarNumber,
     };
 
     dispatch(registerUser(body)).then((response) => {
@@ -125,46 +119,10 @@ function RegisterPage({ closeModal }) {
             />
           </div>
 
-          <div className={styles.info}>
-            <div className={styles.infoN}>차량번호</div>
-            <input
-              type="text"
-              className={styles.input}
-              value={CarNumber}
-              onChange={onCarNumberHandler}
-            />
-          </div>
-
           <div className={styles.info2}>
             <button type="submit">가입하기</button>
           </div>
         </div>
-
-        {/* <div className={styles.SignUpForm}>
-          <div style={
-          styles.title}>
-              <form style={{ display: 'flex', flexDirection: 'column' }}
-                  onSubmit={onSubmitHandler}
-              >
-                      <div className={styles.info}>이메일
-                          <input type='email' className={styles.input}  value={Email} onChange={onEmailHandler} />
-                          </div>
-
-                      <div className={styles.info}>이름
-                          <input type='text' className={styles.input}  value={Name} onChange={onNameHandler} />
-                          </div>
-
-                      <div className={styles.info}>비밀번호
-                          <input type='password' className={styles.input}  value={Password} onChange={onPasswordHandler} />
-                          </div>
-
-                      <div className={styles.info}>비밀번호 확인
-                          <input type='password' className={styles.input}  value={ConfirmPassword} onChange={onConfirmPasswordHandler} />
-                          </div>
-
-                      <div className={styles.info}>전화번호
-                          <input type='text' className={styles.input}  value={HandPhone} onChange={onHandPhoneHandler} />
-                          </div> */}
       </div>
     </form>
   );
